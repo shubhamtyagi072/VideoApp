@@ -99,10 +99,9 @@ export default function MainParticipantInfo({ participant, children }: MainParti
 
   const isVideoSwitchedOff = useIsTrackSwitchedOff(videoTrack as LocalVideoTrack | RemoteVideoTrack);
   const isParticipantReconnecting = useParticipantIsReconnecting(participant);
-  var name1 = participant.identity.toString()
-  var trim = (name1).indexOf("-")
-  var name = name1.slice(0,trim)
-  
+  // var name1 = participant.identity.toString()
+  // var trim = (name1).indexOf("-")
+  var name = localStorage.getItem('NAME');
   return (
     <div
       data-cy-main-participant

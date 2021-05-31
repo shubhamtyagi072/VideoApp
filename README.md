@@ -1,4 +1,4 @@
-# Twilio Video React App
+# CB Video Conferencing React App
 
 [![CircleCI](https://circleci.com/gh/twilio/twilio-video-app-react.svg?style=svg)](https://circleci.com/gh/twilio/twilio-video-app-react)
 
@@ -203,7 +203,7 @@ The state of this application (with a few exceptions) is managed by the [room ob
 
 One great way to learn about the room object is to explore it in the browser console. When you are connected to a room, the application will expose the room object as a window variable: `window.twilioRoom`.
 
-Since the Twilio Video SDK manages the `room` object state, it can be used as the source of truth. It isn't necessary to use a tool like Redux to track the room state. The `room` object and most child properties are [event emitters](https://nodejs.org/api/events.html#events_class_eventemitter), which means that we can subscribe to these events to update React components as the room state changes.
+Since the CB Video Conferencing SDK manages the `room` object state, it can be used as the source of truth. It isn't necessary to use a tool like Redux to track the room state. The `room` object and most child properties are [event emitters](https://nodejs.org/api/events.html#events_class_eventemitter), which means that we can subscribe to these events to update React components as the room state changes.
 
 [React hooks](https://reactjs.org/docs/hooks-intro.html) can be used to subscribe to events and trigger component re-renders. This application frequently uses the `useState` and `useEffect` hooks to subscribe to changes in room state. Here is a simple example:
 
@@ -226,7 +226,7 @@ export default function useDominantSpeaker(room) {
 
 In this hook, the `useEffect` hook is used to subscribe to the `dominantSpeakerChanged` event emitted by the `room` object. When this event is emitted, the `setDominantSpeaker` function is called which will update the `dominantSpeaker` variable and trigger a re-render of any components that are consuming this hook.
 
-For more information on how React hooks can be used with the Twilio Video SDK, see this tutorial: https://www.twilio.com/blog/video-chat-react-hooks. To see all of the hooks used by this application, look in the `src/hooks` directory.
+For more information on how React hooks can be used with the CB Video Conferencing SDK, see this tutorial: https://www.twilio.com/blog/video-chat-react-hooks. To see all of the hooks used by this application, look in the `src/hooks` directory.
 
 The [VideoProvider](src/components/VideoProvider/index.tsx) component contains much of the logic that relates to connecting to video rooms and acquiring local input devices. The VideoProvider component exposes many properties and methods to the rest of the application through the [useVideoContext](src/hooks/useVideoContext/useVideoContext.ts) hook. Similarly, the [ChatProvider](src/components/ChatProvider/index.tsx) contains logic that relates to connecting to a Twilio Conversation, and it exposes properties and methods through the [useChatContext](src/hooks/useChatContext/useChatContext.ts) hook.
 
@@ -246,8 +246,8 @@ See [.env.example](.env.example) for an explanation of the environment variables
 
 ## Related
 
-- [Twilio Video Android App](https://github.com/twilio/twilio-video-app-android)
-- [Twilio Video iOS App](https://github.com/twilio/twilio-video-app-ios)
+- [CB Video Conferencing Android App](https://github.com/twilio/twilio-video-app-android)
+- [CB Video Conferencing iOS App](https://github.com/twilio/twilio-video-app-ios)
 - [Twilio CLI RTC Plugin](https://github.com/twilio-labs/plugin-rtc)
 
 ## License

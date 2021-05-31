@@ -159,9 +159,9 @@ export default function ParticipantInfo({
   const isParticipantReconnecting = useParticipantIsReconnecting(participant);
 
   const classes = useStyles();
-  var name1 = participant.identity.toString()
-  var trim = (name1).indexOf("-")
-  var name = name1.slice(0,trim)
+  // var name1 = participant.identity.toString()
+  // var trim = (name1).indexOf("-")
+  var name = localStorage.getItem('NAME');
 
   return (
     <div

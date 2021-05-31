@@ -3,7 +3,7 @@ import DeviceSelectionScreen from './DeviceSelectionScreen/DeviceSelectionScreen
 import IntroContainer from '../IntroContainer/IntroContainer';
 import MediaErrorSnackbar from './MediaErrorSnackbar/MediaErrorSnackbar';
 import RoomNameScreen from './RoomNameScreen/RoomNameScreen';
-import Profile from '../ProfileName/Profile'
+// import Profile from '../ProfileName/Profile'
 import { useAppState } from '../../state';
 import { useParams } from 'react-router-dom';
 import useVideoContext from '../../hooks/useVideoContext/useVideoContext';
@@ -24,8 +24,8 @@ export default function PreJoinScreens() {
 
   const [mediaError, setMediaError] = useState<Error>();
   // let [token, setToken] = useState<string>('');
-  const client_identity = localStorage.getItem("NAME") || Math.random().toString()
-  useEffect(() => { 
+  const client_identity = localStorage.getItem('NAME') || Math.random().toString();
+  useEffect(() => {
     // if ((client_identity == undefined ||  client_identity === "sample_name") || (room_name == undefined ||  room_name === "demo_room"))
     // {
     //   alert("Please enter client id and room id")
@@ -74,7 +74,7 @@ export default function PreJoinScreens() {
         />
       )}
 
-      {(step === Steps.deviceSelectionStep) && (
+      {step === Steps.deviceSelectionStep && (
         <DeviceSelectionScreen name={client_identity} roomName={room_name} setStep={setStep} />
       )}
     </IntroContainer>

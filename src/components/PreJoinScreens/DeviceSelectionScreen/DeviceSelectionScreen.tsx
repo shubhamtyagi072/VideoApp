@@ -6,8 +6,8 @@ import SettingsMenu from './SettingsMenu/SettingsMenu';
 import { Steps } from '../PreJoinScreens';
 import ToggleAudioButton from '../../Buttons/ToggleAudioButton/ToggleAudioButton';
 import ToggleVideoButton from '../../Buttons/ToggleVideoButton/ToggleVideoButton';
-import { useAppState } from '../../../state';
-import useChatContext from '../../../hooks/useChatContext/useChatContext';
+// import { useAppState } from '../../../state';
+// import useChatContext from '../../../hooks/useChatContext/useChatContext';
 import useVideoContext from '../../../hooks/useVideoContext/useVideoContext';
 import { getToken } from '../../../service/service';
 
@@ -62,15 +62,15 @@ interface DeviceSelectionScreenProps {
 export default function DeviceSelectionScreen({ name, roomName, setStep }: DeviceSelectionScreenProps) {
   const classes = useStyles();
   let isFetching = false;
-  const { connect: chatConnect } = useChatContext();
+  // const { connect: chatConnect } = useChatContext();
   const { connect: videoConnect, isAcquiringLocalTracks, isConnecting } = useVideoContext();
   const disableButtons = isFetching || isAcquiringLocalTracks || isConnecting;
-  let token = localStorage.getItem("TOKEN")
-  let actualName = name+"-"+token
+  let token = localStorage.getItem('TOKEN');
+  let actualName = name + '-' + token;
   const handleJoin = () => {
-    getToken(actualName, roomName).then(token => {
+    getToken(actualName, roomName).then(toke => {
       isFetching = false;
-      videoConnect(token);
+      videoConnect(toke);
     });
   };
 

@@ -10,7 +10,7 @@
 
 ### New Feature
 
-- This release adds an in-room chat feature. This chat feature allows users to send and receive textual messages and files while connected to a Twilio Video room. This feature is powered by the [Twilio Conversations API](https://www.twilio.com/conversations-api). For more information, please see this [blog post](https://www.twilio.com/blog/open-source-video-chat-app-reactjs-conversations-api).
+- This release adds an in-room chat feature. This chat feature allows users to send and receive textual messages and files while connected to a CB Video Conferencing room. This feature is powered by the [Twilio Conversations API](https://www.twilio.com/conversations-api). For more information, please see this [blog post](https://www.twilio.com/blog/open-source-video-chat-app-reactjs-conversations-api).
 
 ## 0.2.4 (March 23, 2021)
 
@@ -90,7 +90,7 @@ Additionally, all the UI/UX improvements have been implemented on mobile web bro
 
 ## 0.1.0 (March 6, 2020)
 
-This release marks the first iteration of the Twilio Video Collaboration App: a canonical multi-party collaboration video application built with Programmable Video. This application demonstrates the capabilities of Programmable Video and serves as a reference to developers building video apps.
+This release marks the first iteration of the CB Video Conferencing Collaboration App: a canonical multi-party collaboration video application built with Programmable Video. This application demonstrates the capabilities of Programmable Video and serves as a reference to developers building video apps.
 
 This initial release comes with the following features:
 

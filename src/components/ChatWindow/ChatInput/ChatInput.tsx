@@ -108,7 +108,7 @@ export default function ChatInput({ conversation, isChatWindowOpen }: ChatInputP
           } else {
             setFileSendError('There was a problem uploading the file. Please try again.');
           }
-          console.log('Problem sending file: ', e);
+          // console.log('Problem sending file: ', e);
         })
         .finally(() => {
           setIsSendingFile(false);

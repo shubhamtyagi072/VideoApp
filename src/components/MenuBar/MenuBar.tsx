@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+// import { useParams } from 'react-router-dom';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 
+import Dialog from './Dialog';
+// import Dialog from '../ShareLinkModal/ShareLinkModal'
 import Button from '@material-ui/core/Button';
 import EndCallButton from '../Buttons/EndCallButton/EndCallButton';
 import { isMobile } from '../../utils';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+// import DialogMenu from './DialogMenu'
 import Menu from './Menu/Menu';
 import useRoomState from '../../hooks/useRoomState/useRoomState';
 import useVideoContext from '../../hooks/useVideoContext/useVideoContext';
@@ -67,7 +72,14 @@ export default function MenuBar() {
   const { isSharingScreen, toggleScreenShare } = useVideoContext();
   const roomState = useRoomState();
   const isReconnecting = roomState === 'reconnecting';
-  const { room } = useVideoContext();
+  // const [dialogOpen, setDialogOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
+  // const { room } = useVideoContext();
+  // const { room_name = 'demo_room' } = useParams();
+  // let endpoint = window.location.href
+  // let endpoint_arr = endpoint.split('/')
+
+  // const endpoint_name = endpoint_arr[endpoint_arr.length - 1]
 
   return (
     <>
@@ -81,8 +93,22 @@ export default function MenuBar() {
         <Grid container justify="space-around" alignItems="center">
           <Hidden smDown>
             <Grid style={{ flex: 1 }}>
-              <Typography variant="body1">Room ID-: {room!.name}</Typography>
+              <Grid container justify="flex-start">
+                <Button onClick={() => setAboutOpen(true)}>
+                  {' '}
+                  More Meeting Details
+                  <ExpandMoreIcon />
+                </Button>
+
+                <Dialog
+                  open={aboutOpen}
+                  onClose={() => {
+                    setAboutOpen(false);
+                  }}
+                />
+              </Grid>
             </Grid>
+            {/* <Typography variant="body1"></Typography> */}
           </Hidden>
           <Grid item>
             <Grid container justify="center">
