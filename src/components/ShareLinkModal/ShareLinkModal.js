@@ -39,7 +39,7 @@ export default function ResponsiveDialog({ isOpen = false }) {
         Open Meeting Info
       </Button> */}
       <Dialog fullScreen={fullScreen} open={open} onClose={handleClose} aria-labelledby="responsive-dialog-title">
-        <DialogTitle id="responsive-dialog-title">{'Copy this link to share with the other partipitant'}</DialogTitle>
+        <DialogTitle id="responsive-dialog-title">{'Copy this link to share with the other participants'}</DialogTitle>
         <DialogContent>
           <DialogContentText>{url}</DialogContentText>
         </DialogContent>

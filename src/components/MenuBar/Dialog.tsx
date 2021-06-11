@@ -43,7 +43,7 @@ function AboutDialog({ open, onClose }: PropsWithChildren<AboutDialogProps>) {
         Open Meeting Info
       </Button> */}
       <Dialog open={open} onClose={onClose} fullWidth={true} maxWidth="xs">
-        <DialogTitle id="responsive-dialog-title">{'Copy this link to share with the other partipitant'}</DialogTitle>
+        <DialogTitle id="responsive-dialog-title">{'Copy this link to share with the other participant'}</DialogTitle>
         <DialogContent>
           <DialogContentText>{url}</DialogContentText>
         </DialogContent>
